@@ -13,9 +13,7 @@ import kotlinx.android.synthetic.main.row_list.view.*
  */
 
 class MyAdapter(val data : ArrayList<MyModel> , val listener : onClick) : RecyclerView.Adapter<MyAdapter.MyHolder>() {
-    override fun getItemCount(): Int {
-        return data.size
-    }
+    override fun getItemCount() = data.size
 
     override fun onBindViewHolder(holder: MyHolder, position: Int) = holder.bind(
             data[position] , listener

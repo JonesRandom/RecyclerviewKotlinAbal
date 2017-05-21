@@ -13,7 +13,12 @@ class MainActivity : AppCompatActivity(), MyAdapter.onClick {
         setContentView(R.layout.activity_main)
 
         val data : ArrayList<MyModel> = ArrayList()
-        (1..20).mapTo(data) { MyModel("Nama Mantan " + it, "Alamat Mantan " + it) }
+        (1..20).mapTo(data) {
+            MyModel(
+                    "Nama Mantan " + it,
+                    "Alamat Mantan " + it
+            )
+        }
 
         list.setHasFixedSize(true)
         list.layoutManager = LinearLayoutManager(this)
@@ -24,4 +29,6 @@ class MainActivity : AppCompatActivity(), MyAdapter.onClick {
     override fun click(model: MyModel) {
         Toast.makeText(applicationContext , model.Nama , Toast.LENGTH_SHORT).show()
     }
+
+
 }
